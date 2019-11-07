@@ -19,6 +19,10 @@
       <id>jcenter.bintray.com</id>
       <url>https://jcenter.bintray.com</url>
     </repository>
+    <repository>
+      <id>swt-repo</id>
+      <url>http://maven-eclipse.github.io/maven</url>
+    </repository>
   </repositories>
   <dependencyManagement>
     <dependencies>
@@ -63,6 +67,52 @@
       <version>1.2.3</version>
       <scope>runtime</scope>
     </dependency>
+
+    <dependency>
+      <groupId>${swt.groupId}</groupId>
+      <artifactId>${swt.artifactId}</artifactId>
+      <version>4.4</version>
+    </dependency>
+
+    
+
+
+    <dependency>
+      <groupId>swt</groupId>
+      <artifactId>jface</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>swt</groupId>
+      <artifactId>osgi</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.diffplug.durian</groupId>
+      <artifactId>durian</artifactId>
+      <version>3.4.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.diffplug.durian</groupId>
+      <artifactId>durian-rx</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.diffplug.durian</groupId>
+      <artifactId>durian-swt</artifactId>
+      <version>3.1.1</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.eclipse.platform</groupId>
+          <artifactId>org.eclipse.jface</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
@@ -211,4 +261,62 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <profiles>
+    <profile>
+      <id>mac 64 bit</id>
+      <activation>
+        <os>
+          <name>mac os x</name>
+        </os>
+      </activation>
+      <properties>
+        <swt.groupId>org.eclipse.swt</swt.groupId>
+        <swt.artifactId>org.eclipse.swt.cocoa.macosx.x86_64</swt.artifactId>
+      </properties>
+    </profile>
+    <profile>
+      <id>windows32bit</id>
+
+      <activation>
+
+        <os>
+          <family>windows</family>
+        </os>
+      </activation>
+      <properties>
+        <swt.groupId>org.eclipse.swt</swt.groupId>
+        <swt.artifactId>org.eclipse.swt.win32.win32.x86</swt.artifactId>
+      </properties>
+    </profile>
+    <profile>
+      <id>windows64bit</id>
+
+      <activation>
+        <os>
+          <family>windows</family>
+        </os>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <swt.groupId>org.eclipse.swt</swt.groupId>
+        <swt.artifactId>org.eclipse.swt.win32.win32.x86_64</swt.artifactId>
+      </properties>
+    </profile>
+    <profile>
+      <id>linux 64 bit</id>
+      <activation>
+        <os>
+          <family>linux</family>
+        </os>
+      </activation>
+      <properties>
+        <swt.groupId>org.eclipse.swt</swt.groupId>
+        <swt.artifactId>org.eclipse.swt.gtk.linux.x86_64</swt.artifactId>
+      </properties>
+    </profile>
+  </profiles>
+
+
+
 </project>

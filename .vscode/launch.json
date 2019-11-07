@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PlayerallCommand",
+            "request": "launch",
+            "mainClass": "com.github.antoniocaccamo.playerall.PlayerallCommand",
+            "projectName": "playerall"
+        }
+    ]
+}

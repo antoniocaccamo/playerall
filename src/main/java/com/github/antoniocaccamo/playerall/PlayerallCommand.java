@@ -1,5 +1,11 @@
 package com.github.antoniocaccamo.playerall;
 
+import com.diffplug.common.swt.Coat;
+import com.diffplug.common.swt.Shells;
+
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Point;
+
 import io.micronaut.configuration.picocli.PicocliRunner;
 import io.micronaut.context.ApplicationContext;
 
@@ -24,5 +30,13 @@ public class PlayerallCommand implements Runnable {
         if (verbose) {
             System.out.println("Hi!");
         }
+
+       Shells.builder(SWT.RESIZE | SWT.ICON | SWT.CLOSE, cmp -> {
+
+       })
+        .setTitle("title")
+        .setSize(400, 300)
+        .setLocation(new Point(22, 22))
+        .openOnDisplayBlocking();
     }
 }
