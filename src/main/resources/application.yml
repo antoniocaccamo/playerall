@@ -1,3 +1,5 @@
 micronaut:
   application:
     name: playerall
+  server:
+    port: 8080

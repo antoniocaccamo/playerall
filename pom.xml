@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?><project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.antoniocaccamo.playerall</groupId>
   <artifactId>playerall</artifactId>
@@ -15,18 +15,25 @@
     <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
     <lombok.version>1.18.8</lombok.version>
   </properties>
+
   <repositories>
+
     <repository>
       <id>jcenter.bintray.com</id>
       <url>https://jcenter.bintray.com</url>
     </repository>
+
     <repository>
       <id>swt-repo</id>
       <url>http://maven-eclipse.github.io/maven</url>
     </repository>
+
   </repositories>
+
   <dependencyManagement>
+
     <dependencies>
+
       <dependency>
         <groupId>io.micronaut</groupId>
         <artifactId>micronaut-bom</artifactId>
@@ -43,33 +50,63 @@
       </dependency>
 
     </dependencies>
+
   </dependencyManagement>
+
   <dependencies>
+
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-runtime</artifactId>
       <scope>compile</scope>
     </dependency>
+
     <dependency>
       <groupId>info.picocli</groupId>
       <artifactId>picocli</artifactId>
       <scope>compile</scope>
     </dependency>
+
     <dependency>
       <groupId>io.micronaut.configuration</groupId>
       <artifactId>micronaut-picocli</artifactId>
       <scope>compile</scope>
     </dependency>
+
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-inject</artifactId>
       <scope>compile</scope>
     </dependency>
+
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-validation</artifactId>
       <scope>compile</scope>
     </dependency>
+
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-http-server-netty</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.micronaut.configuration</groupId>
+      <artifactId>micronaut-micrometer-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-management</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.swagger.core.v3</groupId>
+      <artifactId>swagger-annotations</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
@@ -82,9 +119,6 @@
       <artifactId>${swt.artifactId}</artifactId>
       <version>4.4</version>
     </dependency>
-
-    
-
 
     <dependency>
       <groupId>swt</groupId>
@@ -132,22 +166,27 @@
       <artifactId>junit-jupiter-api</artifactId>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>io.micronaut.test</groupId>
       <artifactId>micronaut-test-junit5</artifactId>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-inject-java</artifactId>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -240,6 +279,11 @@
                     <version>1.2.1</version>
                   </path>
               <path>
+                <groupId>io.micronaut.configuration</groupId>
+                <artifactId>micronaut-openapi</artifactId>
+                <version>${micronaut.version}</version>
+              </path>
+              <path>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
@@ -271,6 +315,11 @@
                     <groupId>io.micronaut.configuration</groupId>
                     <artifactId>micronaut-picocli</artifactId>
                     <version>1.2.1</version>
+                  </path>
+                  <path>
+                    <groupId>io.micronaut.configuration</groupId>
+                    <artifactId>micronaut-openapi</artifactId>
+                    <version>${micronaut.version}</version>
                   </path>
                   <path>
                     <groupId>org.projectlombok</groupId>
